@@ -20,21 +20,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	let albumData = data[array].album;
 
 	Object.keys(albumData).map((list)=>{
+		let src = albumData[list].image[3];
+		
 		music+=`
-		<div class="d-flex justify-content-center">
-		<div class='container mt-3'>
-		<div class=' row '>
-		 <div class='col-md-6 col-sm-12 col-xx-12 col-lg-5'>
-			<div class=" border p-3 bg-warning rounded-sm border-dark h-100">
+		<div class="d-flex justify-content-center p-3 flex-wrap">
+
+			<div class=" border p-3 bg-warning rounded-sm border-dark h-100 style='width:200px !important'">
 				<div>
 					<h1 class=''>Album: </br><a href='${albumData[list].url}'><span style="font-size:30px;color:blue" class=' line-height:'>${albumData[list].name}</span></a> </h1>
-				</div>
+
+				</div>					<img src="${src}" style='width:100px, height:100px'/>
 				<h6><span class="text-monospace">Artist</span> : <kbd>${albumData[list].artist.name}</kbd> | <span class="text-monospace">Played </span><kbd>${albumData[list].playcount}</kbd> times</h6>
 				<a href='${albumData[list].url}'><button type="button" class="btn btn-outline-light btn-sm custom mt-1 rounded-pill">Play</button></a>
 			</div>
-		 </div>
-		</div>
-		</div>
 		</div>
 			`;
 	})

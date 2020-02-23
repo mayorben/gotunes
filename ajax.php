@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,48 +17,77 @@
     <title>Document</title>
     
     <style type="text/css">
+      /*styles for the go up button*/
+      #button {
+      display: inline-block;
+      background-color: #FF9800;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      border-radius: 4px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      transition: background-color .3s, 
+        opacity .5s, visibility .5s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+    }
+    #button::after {
+      content: "\f077";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 2em;
+      line-height: 50px;
+      color: #fff;
+    }
+    #button:hover {
+      cursor: pointer;
+      background-color: #333;
+    }
+    #button:active {
+      background-color: #555;
+    }
+    #button.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+
 
       /* Styles for wrapping the search box */
 
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
+    .main {
+        width: 50%;
+        margin: 50px auto;
+    }
 
-/* Bootstrap 4 text input with search icon */
+    /* Bootstrap 4 text input with search icon */
 
-.has-search .form-control {
-  position: static;
-    margin-top: 47px;
-    padding-left: 2.375rem;
-    
-}
+    .has-search .form-control {
+      position: static;
+        margin-top: 47px;
+        padding-left: 2.375rem;
+        
+    }
 
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-   
-}
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+       
+    }
 
-    /* Styles for wrapping the search box */
-
-.main {
-    width: 50%;
-    margin: 50px auto;
   
-}
-
-/* Bootstrap 4 text input with search icon on the right */
-
-
-/* end */
     /* navbar color here */
       .bg-dark{
         background-color: #903e7c !important;
@@ -71,13 +103,13 @@
        .custom:focus{
         outline: none !important;
        }
-       .sticky-offset {
-    top: 10px;
-}
-    </style>
+    
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top sticky-offset mb-3">
+ 
+<!-- ends here -->
+  <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top sticky-offset">
     <a class="navbar-brand" href="#">
       <img src="images/log.png" width="30" height="30" alt="logo" class="bg-white">
       GoMusiq
@@ -96,7 +128,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Blog</a>
         </li>
+        
       </ul>
+      
+            <!-- Actual search box -->
+           
+
       <span class="navbar-text ml-auto">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -113,7 +150,7 @@
  
 
 <!-- side navbar start from here -->
-<div class="wrapper d-flex align-items-stretch">
+<div class="wrapper d-flex align-items-stretch  fix-top">
   <nav id="sidebar">
     <div class="custom-menu">
       <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -122,7 +159,7 @@
     <div class="img bg-wrap text-center py-4" style="background-image: url(images/bgs_1.jpg);">
       <div class="user-logo">
         <div class="img" style="background-image: url(images/logos.jpg);"></div>
-        <h3>Benson Mayor</h3>
+        <h3>Welcome Here</h3>
       </div>
     </div>
     <ul class="list-unstyled components mb-5">
@@ -150,24 +187,19 @@
     </ul>
 
   </nav>
-
-    <!-- Page Content  -->
-    <div id="content" class="p-4 p-md-5 pt-5">
-
-        <div class="main fixed-top">
-            <!-- Actual search box -->
-            <div class="form-group has-search">
-              <span class="fa fa-search form-control-feedback"></span>
-              <input type="text" class="form-control" placeholder="Search">
-            </div>            
-          </div>
-
-        <!-- <input value=" get api data" type="button" id='btn' class=" btn btn-primary ml-5 mt-4"/> -->
-        <div id='display' style=" width: 100% " ></div>
-    </div>
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+     <!-- <input value=" get api data" type="button" id='btn' class=" btn btn-primary ml-5 mt-4"/> -->
+        <div id='display'  style='width:400px !important' class="d-flex justify-content-center p-3 flex-wrap"></div>
+    
+   </div>
   </div>
-  <div class="main">
-  
+ 
+       <!-- Back to top button -->
+    <a id="button"></a>
+        
+
+     
   
   
       <!-- Actual search box with the icon on the right -->
@@ -182,5 +214,23 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="ajax.js"></script>
+
+  <script type="text/javascript">
+     var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});    
+  </script>
+   
 </body>
 </html>  
