@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 	<div class="card-body">
 	  <h4 class="card-title">${ss.name}</h4>
 	  <p class="card-text">Some example text.</p>
-	  <a href="${ss.url}" class="btn btn-primary">See Profile</a>
+	  <a href="${ss.url}" class="btn btn-primary">Play </a>
 	</div>
   </div>
     `;
