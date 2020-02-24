@@ -4,87 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://use.fontawesome.com/51569c99da.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/audioncard.css">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
     <title>Document</title>
     
     <style type="text/css">
-      /*styles for the go up button*/
-      #button {
-      display: inline-block;
-      background-color: #FF9800;
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      border-radius: 4px;
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      transition: background-color .3s, 
-        opacity .5s, visibility .5s;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 1000;
-    }
-    #button::after {
-      content: "\f077";
-      font-family: FontAwesome;
-      font-weight: normal;
-      font-style: normal;
-      font-size: 2em;
-      line-height: 50px;
-      color: #fff;
-    }
-    #button:hover {
-      cursor: pointer;
-      background-color: #333;
-    }
-    #button:active {
-      background-color: #555;
-    }
-    #button.show {
-      opacity: 1;
-      visibility: visible;
-    }
 
+     .shadowrise{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0px 12px;
+      }
+      .shadowrise2{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
 
-
+      /* for the flex box on page */
+      .scale {
+          transform: scaleY(1.05);
+          padding-top: 5px; 
+      }
 
       /* Styles for wrapping the search box */
 
     .main {
         width: 50%;
         margin: 50px auto;
-    }
-
-    /* Bootstrap 4 text input with search icon */
-
-    .has-search .form-control {
-      position: static;
-        margin-top: 47px;
-        padding-left: 2.375rem;
-        
-    }
-
-    .has-search .form-control-feedback {
-        position: absolute;
-        z-index: 2;
-        display: block;
-        width: 2.375rem;
-        height: 2.375rem;
-        line-height: 2.375rem;
-        text-align: center;
-        pointer-events: none;
-        color: #aaa;
-       
     }
 
   
@@ -108,7 +63,7 @@
 </head>
 <body>
  
-<!-- ends here -->
+
   <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top sticky-offset">
     <a class="navbar-brand" href="#">
       <img src="images/log.png" width="30" height="30" alt="logo" class="bg-white">
@@ -119,40 +74,35 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar-list-2">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
+       
         <li class="nav-item">
           <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="contactUs.php">Contact Us</a>
         </li>
         
       </ul>
-      
-            <!-- Actual search box -->
-           
 
       <span class="navbar-text ml-auto">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Join</a>
-              </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">GoMusiq TV</a>
+               <a href="#" class="btn btn-sm animated-button thar-four nav-link">Join Us</a>
               </li>
+              <li class="nav-item ml-1">
+                <a href="#" class="btn btn-sm animated-button thar-four nav-link">GoMusiq TV</a>
+              </li>
+              
         </ul>  
       </span>
     </div>
   </nav>
 
- 
 
 <!-- side navbar start from here -->
-<div class="wrapper d-flex align-items-stretch  fix-top">
+<div class="wrapper d-flex align-items-stretch">
   <nav id="sidebar">
-    <div class="custom-menu">
+    <div class="custom-menu sticky-top  ">
       <button type="button" id="sidebarCollapse" class="btn btn-primary">
       </button>
     </div>
@@ -184,30 +134,119 @@
       <li>
         <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
       </li>
+      <li>
+        <div class="container mt-3">
+          <div class="row justify-content-center ">
+
+            <div class="col-lg-10 col-md-5 col-sm-6 pt-2 mb-3 shadowrise" >
+              <img src="images/ads.png" class='w-100 h-100'/>
+            </div>
+
+            <div class="col-lg-10 col-md-5 col-sm-6 pt-2 mb-3 shadowrise">
+              <img src="images/ads.png" class='w-100 h-100'/>
+            </div>
+
+            <div class="col-lg-10 col-md-5 col-sm-6 pt-2 mb-3 shadowrise" >
+              <img src="images/ads.png" class='w-100 h-100'/>
+            </div>
+            
+              
+          </div>
+        </div>
+      </li>
     </ul>
 
   </nav>
   <!-- Page Content  -->
-  <div id="content" class="p-4 p-md-5 pt-5">
-     <!-- <input value=" get api data" type="button" id='btn' class=" btn btn-primary ml-5 mt-4"/> -->
-        <div id='display'  style='width:400px !important' class="d-flex justify-content-center p-3 flex-wrap"></div>
-    
-   </div>
+  <div id="content " class="p-md-2 container shadowrise2" >
+    <!-- carousel starts here -->
+    <div id='border2 ' class=' shadowrise'>
+    <div id="carousel borders" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/logo2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/logo3.jpeg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/logo.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+    <!-- carousel ends -->
+    <!-- search start -->
+    <div class="row justify-content-center mt-2" >
+                        <div class="col-10 col-md-8 col-lg-8 col-sm-10 ">
+                            <form class="card card-sm">
+                                <div class="card-body row no-gutters align-items-center box">
+                                    <div class="col-auto">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Movie or Song">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-light" type="submit">Search</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>  
+
+    
+                    <div class="d-flex flex-wrap justify-content-center m-2 shadowrise" id='display'>
+
+                    </div>
+   
+
+    <!-- this ends the main page -->
+  </div>
+  </div>
+
+ 
+
+  
+  <div class="container ">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xx-12">
+       <span class='p-3'>Created by <code>Benson Mayowa <?php ?> </code></span>
+        </div>
+      </div>
+    </div>
  
        <!-- Back to top button -->
-    <a id="button"></a>
-        
-
-     
-  
-  
-      <!-- Actual search box with the icon on the right -->
-     
-
-
-<!-- <img src="" height="350px" width="350px" id="img"/> -->
-
+       <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+    
 <!-- <span>made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>='ajax.js'></span> -->
  <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
@@ -216,20 +255,7 @@
     <script src="ajax.js"></script>
 
   <script type="text/javascript">
-     var btn = $('#button');
-
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
-});
-
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});    
+    
   </script>
    
 </body>

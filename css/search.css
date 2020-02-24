@@ -1,0 +1,24 @@
+.form-control-borderless {
+    border: none !important;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+}
+
+.card-body{
+    padding: 0px !important;
+}
+
+.box {
+    transition: box-shadow ease-in .1s;
+    border-radius:10px;
+ 
+    
+  }
+  .box:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
